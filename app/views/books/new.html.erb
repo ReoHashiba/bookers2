@@ -1,0 +1,19 @@
+<h2>New Book</h2>
+<%= form_with model: @book, url: '/books', method: :post do |f| %>
+
+    <div class = "img_field">
+      <%=f.file_field :image, accept: "image/*" %>
+    </div>
+    
+    <div class = "title">
+      <label>Title</label>
+      <%= f.text_field :title %>
+    </div>
+
+    <div class = "Opinion">
+      <label>Opinion</label>
+      <%= f.text_area :body %>
+    </div>
+
+    <%= f.submit 'Create Book', class: "CreateBook_btn" %>
+<% end %>
